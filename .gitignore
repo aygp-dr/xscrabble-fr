@@ -1,0 +1,26 @@
+# Dictionary source file
+lib/dictionary.txt
+
+# Build output
+release/
+build/
+
+# Generated binaries
+*.o
+*.so
+*.a
+
+# Compressed files
+*.tar.gz
+*.zip
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/

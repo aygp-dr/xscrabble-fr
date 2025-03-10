@@ -1,0 +1,636 @@
+! *** XScrabble_fr (French) resource file ***
+
+! edit the following four pathnames as required:
+*dictfile:			/usr/games/lib/scrabble/fr/ODS8
+*scorefile:			/usr/games/lib/scrabble/fr/scrabble_scores
+*rulesfile:			/usr/games/lib/scrabble/fr/scrabble_rules
+
+! version string, to make sure correct resource file is loaded
+*version:			210
+
+! lines 1, 2, 3, 4  = letters, frequencies, scores, blanktiles (possibly none)
+! lines 5, 6, 7 ... = internal messages
+! French Scrabble tile frequencies and scores
+*prompts.label:			\
+\*,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z;\n\
+2,9,2,2,3,15,1,2,2,8,1,1,5,3,6,6,2,1,6,6,6,6,2,1,1,1,1;\n\
+0,1,3,3,2,1,4,2,4,1,8,10,1,2,1,1,3,8,1,1,1,1,4,10,10,10,10;\n\
+a,e,i,l,n,o,r,s,t,u;\n\
+Lettres  Sc   Fq       Lettres  Sc   Fq    \n\
+Joker lettre ...\n\
+point\n\
+points\n\
+Joueur\n\
+Nom\n\
+Score\n\
+Chevalet\n\
+VIDE\n\
+(vide)\n\
+À votre tour %s.\n\
+Au tour de %s.\n\
+Coup accepté. Vous marquez %d %s.\n\
+%s marque %d %s.\n\
+Ce coup rapporterait %d %s.\n\
+Jetons restants: \n\
+\*\*\* SPAM \*\*\*\n\
+Mot non valide - vous perdez votre tour.\n\
+%s fait un mot invalide.\n\
+Pas assez de jetons pour en changer autant.\n\
+%s change ses jetons.\n\
+Vous devez utiliser la case centrale.\n\
+Disposition incorrecte des jetons.\n\
+Ce jeton ne peut pas être déplacé.\n\
+Case occupée.\n\
+%s passe.\n\
+Impossible d'accéder au plateau - ce n'est pas votre tour.\n\
+Partie terminée. Vous perdez %d %s.\n\
+Partie terminée. Vous obtenez %d %s de bonus.\n\
+%s est le gagnant\!\n\
+%s et %s sont à égalité\!\n\
+%s, %s et %s sont à égalité\!\n\
+C'est une égalité parfaite\!\n\
+%s marque %d %s.\n\
+%s n'a plus de temps.\n\
+Vous n'avez plus de temps.\n\
+Sélectionnez quitter pour terminer.\n\
+%s envoie un message. Voir Info/boîte de message.\n\
+Début de la partie...\n\
+Fermer\n\
+Ping tous\n\
+Réflexion...\n\
+(humain)\n\
+(niveau ordinateur  )\n\
+%s demande une pause.\n\
+%s revient à la partie.\n\
+%s a été désigné pour commencer.\n\
+%s, êtes-vous prêt à commencer?\n\
+Ok, %s va commencer la partie...\n\
+Mot valide\n\
+Mot invalide\n
+
+*title:				XScrabble
+*iconName:			XScrabble
+*font:				-b&h-lucidatypewriter-bold-r-normal-*-12-*
+*background:			green2
+
+*title.label:			XScrabble
+*title.font:			-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+*title.horizDistance:		10
+*title.vertDistance:		10
+*title.borderWidth:		0
+*title.height:			45
+
+*board.fromVert:		title
+*board.vertDistance:		10
+*board.horizDistance:		10
+*board*borderWidth:		1
+*board*background:		white
+
+*board*vertDistance:		0
+*board*horizDistance:		0
+*board*highlightThickness:	0
+!*board*font:			-b&h-lucidatypewriter-bold-r-normal-*-12-*
+*board*font:			-b&h-lucidatypewriter-bold-r-normal-*-14-*
+!*board*font:			-b&h-lucidatypewriter-bold-r-normal-*-18-*
+!*board.?.width:			18
+*board.?.width:			22
+!*board.?.width:			28
+*board.?.height:		22
+!*board.?.height:		28
+
+*board.surr*background:		white
+*board.surr*borderColor:	white
+!*board.surr*horizDistance:	18
+*board.surr*horizDistance:	24
+!*board.surr*horizDistance:	30
+*board.edg*background:		white
+*board.edg*borderColor:		white
+!*board.edg*width:		15
+*board.edg*width:		22
+!*board.edg*width:		28
+*board.edg*justify:		center
+*board.edg*internalWidth:	0
+
+
+*helpButton.width:		59
+*helpButton.fromHoriz:		board
+*helpButton.horizDistance:	10
+*helpButton.vertDistance:	10
+*helpButton.label:		Aide
+*helpButton*leftMargin:		10
+*menu*help0.label:		Trier lettres manuellement
+*menu*help1.label:		Voir contenu du sac
+*menu*help2.label:		Vérifier un mot
+*menu*help3.label:		Placer un mot
+*menu*help4.label:	        Lettres données -> mots
+*menu*help5.label:		Suggestion ordinateur
+
+
+*menuButton.width:		59
+*menuButton.fromHoriz:		helpButton
+*menuButton.horizDistance:	10
+*menuButton.vertDistance:	10
+*menuButton.label:		Info
+*menuButton*leftMargin:		10
+*menu*entry0.label:		Légende
+*menu*entry1.label:		Valeurs des lettres
+*menu*entry2.label:		Règles du jeu
+*menu*entry3.label:		Meilleurs scores
+*menu*entry4.label:		Meilleurs coups
+*menu*entry5.label:		Boîte à messages
+*menu*entry6.label:		À propos
+
+*keytitle.label:		Légende:
+!*keytitle.width:		130
+*keybox.ksq0.fromVert:		keytitle
+*keybox.ksq0.width:		15
+*keybox.ksq1.width:		15
+*keybox.ksq2.width:		15
+*keybox.ksq3.width:		15
+*keybox.klb0.fromVert:		keytitle
+*keybox.klb0.borderColor:	green2
+*keybox.klb1.borderColor:	green2
+*keybox.klb2.borderColor:	green2
+*keybox.klb3.borderColor:	green2
+*keybox.klb0.label:		Lettre compte double
+*keybox.klb1.label:		Lettre compte triple
+*keybox.klb2.label:		Mot compte double
+*keybox.klb3.label:		Mot compte triple
+*keybox.klb0.width:		100
+*keybox.klb1.width:		100
+*keybox.klb2.width:		100
+*keybox.klb3.width:		100
+*keydismiss.label:		Fermer
+*keydismiss.fromVert:		klb3
+
+*abouttitle.label:		XScrabble
+*abouttitle.font:		-*-charter-bold-r-*-*-30-*-*-*-*-*-iso8859-*
+*abouttext.label:		Par:\nMatt Chapman &\nMatthew Badham
+*abouttext.font:		-*-times-bold-r-*-*-16-*-*-*-*-*-iso8859-*
+*aboutdismiss.label:		Fermer
+
+*scoretitle.fromVert:		title
+*scoretitle.fromHoriz:		board
+*scoretitle.vertDistance:	10
+*scoretitle.horizDistance:	10
+*scoretitle.label:		Scores:
+*scoretitle.width:		130
+*scorebox*background:		green2
+*scorebox.label:		\n\n\n\n
+*scorebox.vertDistance:		-1
+*scorebox.horizDistance:	10
+*scorebox.fromVert:		scoretitle
+*scorebox.fromHoriz:		board
+*scorebox.width:		130
+
+*tilesleft.fromHoriz:		board
+*tilesleft.fromVert:		scorebox
+*tilesleft.vertDistance:	10
+*tilesleft.horizDistance:	10
+!*tilesleft.label:		Tiles Left: 100
+*tilesleft.width:		130
+
+*timeleft.fromHoriz:		board
+*timeleft.fromVert:		tilesleft
+*timeleft.vertDistance:		7
+*timeleft.horizDistance:	35
+*timeleft.height:		75
+*timeleft.width:		80
+
+*bar.fromVert:			board
+!*bar.horizDistance:		40
+*bar.horizDistance:		56
+!*bar.horizDistance:		68
+!*bar.vertDistance:		7
+*bar.vertDistance:		12
+*bar.background:		forestgreen
+*bar.?.background:		forestgreen
+*bar*highlightThickness:	1
+!*bar*font:			-b&h-lucidatypewriter-bold-r-normal-*-12-*
+*bar*font:			-b&h-lucidatypewriter-bold-r-normal-*-14-*
+!*bar*font:			-b&h-lucidatypewriter-bold-r-normal-*-18-*
+*bar*width:			18
+*bar*height:			18
+!*bar*width:			24
+!*bar*height:			24
+
+*finish.fromVert:		tilesleft
+*finish.vertDistance:		90		
+*finish.label:			Terminer
+*finish.fromHoriz:		board
+*finish.horizDistance:		10
+*finish.width:			130
+*change.label:			Changer lettres
+*change.fromVert:		finish
+*change.fromHoriz:		board
+*change.horizDistance:		10
+*change.width:			130
+*pass.label:			Passer
+*pass.fromVert:			change
+*pass.fromHoriz:		board
+*pass.horizDistance:		10
+*pass.width:			130
+*evaluate.label:		Évaluer
+*evaluate.fromVert:		pass
+*evaluate.fromHoriz:		board
+*evaluate.horizDistance:	10
+*evaluate.width:		130
+
+*revert.label:			Retour au chevalet
+*revert.fromVert:		evaluate
+*revert.fromHoriz:		board
+*revert.horizDistance:		10
+*revert.width:			130
+
+*juggle.label:			Mélanger
+*juggle.fromVert:		revert
+*juggle.fromHoriz:		board
+*juggle.horizDistance:		10
+*juggle.width:			130
+
+*message.fromVert:		bar
+*message.horizDistance:		10
+!*message.vertDistance:		7
+*message.vertDistance:		12
+*message.label:				
+!*message.width:			339
+*message.width:			412
+!*message.width:			514
+
+*pause.label:			Démarrer/Pause
+*pause.fromVert:	        bar
+!*pause.vertDistance:		7
+*pause.vertDistance:		12
+*pause.fromHoriz:	        board
+*pause.horizDistance:		10
+*pause.width:			59
+
+*exit.label:			Quitter
+*exit.fromVert:		        bar
+!*exit.vertDistance:		7
+*exit.vertDistance:		12
+*exit.fromHoriz:	        board
+*exit.horizDistance:		80
+*exit.width:			59
+
+*blankshell*blanktitle.label:	Le jeton blanc représente:
+
+*changeshell*changetitle.label:		Sélectionnez les jetons à changer:
+*changeshell*changeconfirm.label:	Changer
+*changeshell*changecancel.label:	Annuler
+
+
+*showbagshell*showbagtitle.label:	        Contenu du sac
+*showbagshell*showbagtitle.borderWidth:	0
+*showbagshell*showbagtitle.height:		57
+*showbagshell*showbagtitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*showbagshell*showbagmain.fromVert:		showbagtitle
+*showbagshell*showbagmain.vertDistance:	20
+*showbagshell*showbagmain.width:		600
+*showbagshell*showbagmain.height:		270
+*showbagshell*showbagmain*font:			-b&h-lucidatypewriter-bold-r-normal-*-14-*
+
+*showbagshell*showbagupdate.label:		Mettre à jour
+*showbagshell*showbagupdate.fromVert:		showbagmain
+*showbagshell*showbagdismiss.label:		Fermer
+*showbagshell*showbagdismiss.fromHoriz:		showbagupdate
+*showbagshell*showbagdismiss.fromVert:		showbagmain
+
+
+*checkwordshell*checkwordtitle.label:	        Vérifier un mot
+*checkwordshell*checkwordtitle.borderWidth:	0
+*checkwordshell*checkwordtitle.height:		57
+*checkwordshell*checkwordtitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*checkwordshell*checkwordprompt.label:	        Votre mot:
+*checkwordshell*checkwordprompt.borderWidth:	0
+*checkwordshell*checkwordprompt.fromVert:	checkwordtitle
+*checkwordshell*checkwordprompt.vertDistance:	20
+*checkwordshell*checkwordprompt.height:		20
+
+*checkwordshell*checkwordmain.fromVert:		checkwordtitle
+*checkwordshell*checkwordmain.fromHoriz:	checkwordprompt
+*checkwordshell*checkwordmain.horizDistance:	10
+*checkwordshell*checkwordmain.vertDistance:	20
+*checkwordshell*checkwordmain.width:		400
+*checkwordshell*checkwordmain.height:		20
+
+*checkwordshell*checkwordnote.label:	        Résultat:
+*checkwordshell*checkwordnote.borderWidth:	0
+*checkwordshell*checkwordnote.fromVert:	        checkwordmain
+*checkwordshell*checkwordnote.vertDistance:	10
+*checkwordshell*checkwordnote.height:		20
+
+*checkwordshell*checkwordresult.label:	        
+*checkwordshell*checkwordresult.borderWidth:	0
+*checkwordshell*checkwordresult.fromVert:	checkwordmain
+*checkwordshell*checkwordresult.fromHoriz:	checkwordnote
+*checkwordshell*checkwordresult.horizDistance:	40
+*checkwordshell*checkwordresult.vertDistance:	10
+*checkwordshell*checkwordresult.width:		400
+*checkwordshell*checkwordresult.height:		20
+*checkwordshell*checkwordresult*justify:	left
+
+*checkwordshell*checkwordupdate.label:		Vérifier
+*checkwordshell*checkwordupdate.fromVert:	checkwordresult
+*checkwordshell*checkwordupdate.vertDistance:	10
+*checkwordshell*checkworddismiss.label:		Fermer
+*checkwordshell*checkworddismiss.fromHoriz:	checkwordupdate
+*checkwordshell*checkworddismiss.fromVert:	checkwordresult
+*checkwordshell*checkworddismiss.vertDistance:	10
+
+
+
+*placewordshell*placewordtitle.label:	        Placer un mot
+*placewordshell*placewordtitle.borderWidth:	0
+*placewordshell*placewordtitle.height:		57
+*placewordshell*placewordtitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*placewordshell*placewordmain.fromVert:		placewordtitle
+*placewordshell*placewordmain.vertDistance:	20
+*placewordshell*placewordmain.width:		600
+*placewordshell*placewordmain.height:		300
+
+*placewordshell*placewordupdate.label:		Rechercher
+*placewordshell*placewordupdate.fromVert:		placewordmain
+*placewordshell*placeworddismiss.label:		Fermer
+*placewordshell*placeworddismiss.fromHoriz:		placewordupdate
+*placewordshell*placeworddismiss.fromVert:		placewordmain
+
+
+*listwordshell*listwordtitle.label:	        Mots existants
+*listwordshell*listwordtitle.borderWidth:	0
+*listwordshell*listwordtitle.height:		57
+*listwordshell*listwordtitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*listwordshell*listwordmain.fromVert:		listwordtitle
+*listwordshell*listwordmain.vertDistance:	20
+*listwordshell*listwordmain.width:		600
+*listwordshell*listwordmain.height:		300
+
+*listwordshell*listwordupdate.label:		Rechercher
+*listwordshell*listwordupdate.fromVert:		listwordmain
+*listwordshell*listworddismiss.label:		Fermer
+*listwordshell*listworddismiss.fromHoriz:		listwordupdate
+*listwordshell*listworddismiss.fromVert:		listwordmain
+
+
+*suggestionshell*suggestiontitle.label:	        Suggestions ordinateur
+*suggestionshell*suggestiontitle.borderWidth:	0
+*suggestionshell*suggestiontitle.height:		57
+*suggestionshell*suggestiontitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*suggestionshell*suggestionmain.fromVert:		suggestiontitle
+*suggestionshell*suggestionmain.vertDistance:	20
+*suggestionshell*suggestionmain.width:		600
+*suggestionshell*suggestionmain.height:		300
+
+*suggestionshell*suggestionupdate.label:		Mettre à jour
+*suggestionshell*suggestionupdate.fromVert:		suggestionmain
+*suggestionshell*suggestiondismiss.label:		Fermer
+*suggestionshell*suggestiondismiss.fromHoriz:		suggestionupdate
+*suggestionshell*suggestiondismiss.fromVert:		suggestionmain
+
+
+*lvtop*lvtitle.label:		\ Lettres, Valeurs et Fréquences 
+*lvtop*lvmain.fromVert:		lvtitle
+*lvtop*lvmain.label:		
+*lvtop*lvdismiss.label:		Fermer
+*lvtop*lvdismiss.fromVert:	lvmain
+
+
+*rulesshell*rulestitle.label:		Règles du Scrabble
+*rulesshell*rulestitle.borderWidth:	0
+*rulesshell*rulestitle.height:		57
+*rulesshell*rulestitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*rulesshell*rulesmain.fromVert:		rulestitle
+*rulesshell*rulesmain.vertDistance:	20
+*rulesshell*rulesmain.width:		600
+*rulesshell*rulesmain.height:		350
+
+*rulesshell*rulesdismiss.label:		Fermer
+*rulesshell*rulesdismiss.fromVert:	rulesmain
+
+
+*hiscoreshell*hiscoretitle.label:		Meilleurs scores
+*hiscoreshell*hiscoretitle.borderWidth:		0
+*hiscoreshell*hiscoretitle.horizDistance:	160
+*hiscoreshell*hiscoretitle.height:		57
+*hiscoreshell*hiscoretitle.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+
+*hiscoreshell*hidismiss.label:		Fermer
+*hiscoreshell*hidismiss.fromHoriz:	hiscoretitle
+*hiscoreshell*hidismiss.horizDistance:	90
+*hiscoreshell*hidismiss.vertDistance:	10
+
+*hiscoreshell*sub0.label:		Un joueur
+*hiscoreshell*sub1.label:		Deux joueurs
+*hiscoreshell*sub2.label:		Trois joueurs
+*hiscoreshell*sub3.label:		Quatre joueurs
+
+*bestgoshell*bestgotitle.label:	Meilleurs coups
+*bestgoshell*bestgotitle.font:	-*-charter-bold-r-*-*-30-*-*-*-*-*-iso8859-*
+*bestgoshell*bestgodismiss.label:	Fermer
+
+/* for the % complete widget for computer's go */
+*compthink.width: 		130
+*compthink.fromHoriz: 		board
+*compthink.horizDistance:	10
+*compthink.fromVert: 		tilesleft
+*compthink.vertDistance:	45
+*compthink.orient:		horizontal
+*compthink.valueVisible:	False
+*compthink.label:		\                \
+
+*showbar.width: 		130
+*showbar.fromHoriz: 		board
+*showbar.horizDistance:		10
+*showbar.fromVert: 		compthink
+*showbar.vertDistance:		45
+*showbar.label:			Montrer lettres
+
+*hidebar.width: 		130
+*hidebar.fromHoriz: 		board
+*hidebar.horizDistance:		10
+*hidebar.fromVert: 		showbar
+*hidebar.label:			Cacher lettres
+
+/* for setup popup */
+*setup*font:			-b&h-lucidatypewriter-bold-r-normal-*-12-*
+*setup*background:		green
+*setup*editType:		edit
+
+*setup*title.label:		XScrabble
+*setup*title.borderWidth:	0
+*setup*title.font:		-*-charter-bold-r-*-*-50-*-*-*-*-*-iso8859-*
+*setup*title.horizDistance:	68
+
+*setup*num_ply.label:		Nombre de joueurs:
+*setup*num_ply.fromVert:	title
+*setup*num_ply.borderWidth:	0
+
+*setup*tog0.state:		True
+*setup*tog0.fromVert:		num_ply
+*setup*tog1.fromHoriz:		tog0
+*setup*tog1.fromVert:		num_ply
+*setup*tog2.fromHoriz:		tog1
+*setup*tog2.fromVert:		num_ply
+*setup*tog3.fromHoriz:		tog2
+*setup*tog3.fromVert:		num_ply
+*setup*tog0.label:		\ 1\ 
+*setup*tog1.label:		\ 2\ 
+*setup*tog2.label:		\ 3\ 
+*setup*tog3.label:		\ 4\ 
+*setup*tog1.radioGroup:		tog0
+*setup*tog2.radioGroup:		tog1
+*setup*tog3.radioGroup:		tog2
+
+*setup*timetitle.label:		Limite de temps (minutes):
+*setup*timetitle.fromVert:	title
+*setup*timetitle.fromHoriz:	tog3
+*setup*timetitle.horizDistance:	60
+*setup*timetitle.borderWidth:	0
+
+*setup*timet0.state:		True
+*setup*timet0.horizDistance:	60
+*setup*timet0.fromHoriz:	tog3
+*setup*timet0.fromVert:		timetitle
+*setup*timet1.fromHoriz:	timet0
+*setup*timet1.fromVert:		timetitle
+*setup*timet2.fromHoriz:	timet1
+*setup*timet2.fromVert:		timetitle
+*setup*timet3.fromHoriz:	timet2
+*setup*timet3.fromVert:		timetitle
+*setup*timet4.fromHoriz:	timet3
+*setup*timet4.fromVert:		timetitle
+*setup*timet5.fromHoriz:	timet4
+*setup*timet5.fromVert:		timetitle
+*setup*timet6.fromHoriz:	timet5
+*setup*timet6.fromVert:		timetitle
+*setup*timet0.label:		Aucune
+*setup*timet1.label:		1
+*setup*timet2.label:		2
+*setup*timet3.label:		3
+*setup*timet4.label:		5
+*setup*timet5.label:		10
+*setup*timet6.label:		15
+*setup*timet1.radioGroup:	timet0
+*setup*timet2.radioGroup:	timet1
+*setup*timet3.radioGroup:	timet2
+*setup*timet4.radioGroup:	timet3
+*setup*timet5.radioGroup:	timet4
+*setup*timet6.radioGroup:	timet5
+
+*setup*nametitle.label:		Noms:
+*setup*nametitle.borderWidth:	0
+*setup*nametitle.fromVert:	tog0
+*setup*nametitle.width:		120
+*setup*nametitle.justify:	left
+
+*setup*disptitle.label:		Affichages X:
+*setup*disptitle.borderWidth:	0
+*setup*disptitle.fromVert:	tog0
+*setup*disptitle.fromHoriz:	nametitle
+*setup*disptitle.width:		120
+*setup*disptitle.justify:	left
+
+*setup*typetitle.label:		Humain/Ordinateur:
+*setup*typetitle.borderWidth:	0
+*setup*typetitle.fromVert:	tog0
+*setup*typetitle.fromHoriz:	disptitle
+*setup*typetitle.width:		120
+*setup*typetitle.justify:	left
+
+*setup*levels.width:		120
+*setup*levels.label:		\
+Humain\nOrdi\nBon\nMeilleur\nGénial\nFabuleux\nSuper\nAs\nGénie\n
+
+*setup*name0.fromVert:		nametitle
+*setup*name1.fromVert:		name0
+*setup*name2.fromVert:		name1
+*setup*name3.fromVert:		name2
+*setup*name0.width:		120
+*setup*name1.width:		120
+*setup*name2.width:		120
+*setup*name3.width:		120
+*setup*name1.mappedWhenManaged:	false
+*setup*name2.mappedWhenManaged:	false
+*setup*name3.mappedWhenManaged:	false
+
+*setup*disp0.fromVert:		disptitle
+*setup*disp1.fromVert:		disp0
+*setup*disp2.fromVert:		disp1
+*setup*disp3.fromVert:		disp2
+*setup*disp0.width:		120
+*setup*disp1.width:		120
+*setup*disp2.width:		120
+*setup*disp3.width:		120
+*setup*disp1.mappedWhenManaged:	false
+*setup*disp2.mappedWhenManaged:	false
+*setup*disp3.mappedWhenManaged:	false
+
+*setup*type0.fromVert:		typetitle
+*setup*type1.fromVert:		type0
+*setup*type2.fromVert:		type1
+*setup*type3.fromVert:		type2
+*setup*type0.width:		120
+*setup*type1.width:		120
+*setup*type2.width:		120
+*setup*type3.width:		120
+*setup*type0.justify:		left
+*setup*type1.justify:		left
+*setup*type2.justify:		left
+*setup*type3.justify:		left
+*setup*type1.mappedWhenManaged:	false
+*setup*type2.mappedWhenManaged:	false
+*setup*type3.mappedWhenManaged:	false
+
+*setup*langtitle.fromVert:	name3
+*setup*langtitle.fromHoriz:     name3
+*setup*langtitle.vertDistance:  20
+*setup*langtitle.label:		Langue(fr/eng):
+*setup*langtitle.width:		120
+*setup*langtitle.borderWidth:	0
+*setup*langtitle.justify:	left
+
+*setup*belltitle.fromVert:	name3
+*setup*belltitle.fromHoriz:	langtitle
+*setup*belltitle.vertDistance:  20
+*setup*belltitle.label:		Sonnerie (% volume):
+*setup*belltitle.width:		120
+*setup*belltitle.borderWidth:	0
+*setup*belltitle.justify:	left
+
+*setup*help.fromVert:		langtitle
+*setup*help.width:		120
+*setup*help.label:		Aide\n\
+Xscrabble permet à 1 à 4 joueurs de jouer ensemble au Scrabble.\n\
+Chacun des joueurs peut être un humain ou un ordinateur;\n\
+sept niveaux d'ordinateur numérotés (1)-(7) sont disponibles.\n\
+Si nécessaire (jeu en réseau), configurez les affichages X\n\
+et les noms des joueurs; sélectionnez les types de joueurs, niveau(x)\n\
+d'ordinateur, limite de temps (1,2,3,5,10 min ou Aucune) et volume sonore.\n\
+La langue peut être sélectionnée si les dictionnaires et ressources\n\
+correspondants sont présents. Appuyez sur "Commencer" et profitez!
+
+*setup*lang_sel.fromVert:	langtitle
+*setup*lang_sel.fromHoriz:      help
+*setup*lang_sel.width:          120
+
+*setup*bell.fromVert:		belltitle
+*setup*bell.fromHoriz:		lang_sel
+*setup*bell.width:		120
+
+*setup*start.fromVert:		lang_sel
+*setup*start.label:		Commencer
+*setup*start.width:		120
+*setup*load.fromVert:		lang_sel
+*setup*load.fromHoriz:		start
+*setup*load.label:		Charger partie
+*setup*load.width:		120
+*setup*quit.fromVert:		lang_sel
+*setup*quit.fromHoriz:		load
+*setup*quit.label:		Annuler
+*setup*quit.width:		120
