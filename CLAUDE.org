@@ -1,16 +1,17 @@
-# DEPRECATED - See CLAUDE.org instead
+#+TITLE: XScrabble-FR Development Notes
+#+AUTHOR: aygp-dr
+#+DATE: 2025-03-19
+#+PROPERTY: header-args :mkdirp yes
 
-This CLAUDE.md file is deprecated. Please use CLAUDE.org for all project preferences and documentation.
-
-# XScrabble-FR Development Notes
+* XScrabble-FR Development Notes
 
 This file contains helpful information about the repository setup, build process, and release workflow for the xscrabble-fr project. These notes are meant for maintainers and can be referred to when making changes or creating new releases.
 
-## Repository Setup
+** Repository Setup
 
 The repository was initialized with:
 
-```bash
+#+begin_src bash
 # Initialize repository and set main branch
 git init
 git branch -m main
@@ -20,13 +21,13 @@ git add .
 
 # Create initial commit with conventional commits format
 git commit --no-gpg-sign -m "feat: initial setup of xscrabble-fr with ODS8 dictionary"
-```
+#+end_src
 
-## GitHub Repository Creation
+** GitHub Repository Creation
 
 The GitHub repository was created and configured with:
 
-```bash
+#+begin_src bash
 # Create GitHub repository and push initial commit
 gh repo create xscrabble-fr --public \
     --description "French adaptation of XScrabble with ODS8 dictionary and full French UI for X-Window systems" \
@@ -34,34 +35,34 @@ gh repo create xscrabble-fr --public \
 
 # Add topics for better discoverability
 gh repo edit --add-topic "scrabble,x11,game,french,dictionary,ods8,unix,linux"
-```
+#+end_src
 
-## Adding Collaborators
+** Adding Collaborators
 
 Collaborators can be added to the repository using GitHub's API:
 
-```bash
+#+begin_src bash
 # Add a collaborator with admin permissions
 gh api --method PUT repos/{owner}/xscrabble-fr/collaborators/{username} -f permission=admin
-```
+#+end_src
 
-## Building the Dictionary
+** Building the Dictionary
 
 The French Scrabble dictionary is downloaded from a GitHub repository and compressed:
 
-```bash
+#+begin_src bash
 # Download the dictionary if it doesn't exist
 make fetch-dictionary
 
 # Create the compressed dictionary
 make lib/ODS8.gz
-```
+#+end_src
 
-## Creating Releases
+** Creating Releases
 
 Releases can be created with GitHub's CLI tool:
 
-```bash
+#+begin_src bash
 # Build the release tarball
 make release
 
@@ -70,51 +71,51 @@ gh release create v1.0.0 \
     --title "XScrabble French v1.0.0" \
     --notes "Initial release of the French language pack for XScrabble with ODS8 dictionary" \
     release/xscrabble_fr.tar.gz
-```
+#+end_src
 
-## Directory Structure
+** Directory Structure
 
 The release tarball follows this structure:
 
-```
+#+begin_example
 xscrabble_fr/
 ├── app-defaults/
 │   └── XScrabble_fr       # X11 resource file with French UI elements
 └── lib/
     ├── ODS8.gz            # Compressed French Scrabble dictionary
     └── scrabble_rules     # French game rules
-```
+#+end_example
 
-## Makefile Targets
+** Makefile Targets
 
 The Makefile includes these useful targets:
 
-- `all` - Build all components
-- `lib/ODS8.gz` - Create the compressed dictionary
-- `fetch-dictionary` - Download the dictionary source
-- `update-gitignore` - Update .gitignore file
-- `release` - Create the distribution tarball
-- `check-release` - Check if release is up to date
-- `clean` - Remove all generated files
+- ~all~ - Build all components
+- ~lib/ODS8.gz~ - Create the compressed dictionary
+- ~fetch-dictionary~ - Download the dictionary source
+- ~update-gitignore~ - Update .gitignore file
+- ~release~ - Create the distribution tarball
+- ~check-release~ - Check if release is up to date
+- ~clean~ - Remove all generated files
 
-Run `make help` to see all available targets.
+Run ~make help~ to see all available targets.
 
-## Testing the Dictionary
+** Testing the Dictionary
 
 The test-dictionary.sh script can be used to verify the dictionary:
 
-```bash
+#+begin_src bash
 # Run basic tests on the dictionary
 ./test-dictionary.sh
 
 # Check if a specific word exists
 ./test-dictionary.sh <word>
-```
+#+end_src
 
-## Release Process
+** Release Process
 
 1. Make changes to the code/resources as needed
-2. Build and test locally with `make all` and `./test-dictionary.sh`
-3. Check if release needs to be rebuilt with `make check-release`
-4. Create a release tarball with `make release`
-5. Create a GitHub release with `gh release create`
+2. Build and test locally with ~make all~ and ~./test-dictionary.sh~
+3. Check if release needs to be rebuilt with ~make check-release~
+4. Create a release tarball with ~make release~
+5. Create a GitHub release with ~gh release create~
