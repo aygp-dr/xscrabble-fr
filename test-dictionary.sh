@@ -27,8 +27,8 @@ check_word "BONJOUR"
 check_word "MERCI"
 check_word "CHAT"
 check_word "CHIEN"
-check_word "FENETRE"    # Should fail without accent
-check_word "FENÊTRE"    # Should succeed with accent
+check_word "FENETRE"    # Without accent (standard in Scrabble)
+# Note: French Scrabble dictionaries typically use uppercase without accents
 
 # Scrabble special words
 echo ""
