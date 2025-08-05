@@ -1,0 +1,12 @@
+Cleanup tasks performed:
+- Identified CLAUDE.md as deprecated based on its content pointing to CLAUDE.org
+- Fixed test-dictionary.sh to remove incorrect expectation of accented characters
+- Dictionary uses standard French Scrabble format (uppercase, no accents)
+- All build processes tested successfully
+- Release tarball created and verified
+
+Test results confirmed:
+- Dictionary contains 411,430 words
+- Common French words validated correctly
+- Scrabble-specific words (AA, XI, QUIZ) present
+- Build system working properly with make all, make release
